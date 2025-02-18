@@ -1,5 +1,5 @@
 import ProductPanelSmall from "@/_components/ProductPanelSmall";
-import ProfileInputs from "./settings/_components/ProfileInputs";
+import { NavBar } from "@/custom-components/NavBar";
 
 export default function Home() {
   const products = {
