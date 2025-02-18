@@ -1,5 +1,5 @@
 "use client";
-type ProductPanelSmallProps = {
+export type ProductPanelSmallProps = {
   price: number;
   date: string;
   description: string;
