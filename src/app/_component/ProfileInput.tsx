@@ -1,4 +1,5 @@
 import { Input } from "@/components/ui/input";
+
 const ProfileInputs = () => {
   return (
     <div className="w-[500px] flex flex-wrap gap-5">
