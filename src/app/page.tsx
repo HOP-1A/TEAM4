@@ -1,4 +1,5 @@
 import ProductPanelSmall from "@/_components/ProductPanelSmall";
+import ProfileInputs from "./settings/_components/ProfileInputs";
 
 export default function Home() {
   const products = {
@@ -16,6 +17,7 @@ export default function Home() {
         description={products.description}
         imgUrl={products.imgUrl}
       />
+      <ProfileInputs />
     </div>
   );
 }
