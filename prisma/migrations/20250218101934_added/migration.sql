@@ -14,6 +14,7 @@ CREATE TABLE "Products" (
     "price" INTEGER NOT NULL,
     "quantity" INTEGER NOT NULL,
     "name" TEXT NOT NULL,
+    "hasDelivery" BOOLEAN NOT NULL, 
     "updatedAt" TIMESTAMP(3) NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "usersId" TEXT NOT NULL,
