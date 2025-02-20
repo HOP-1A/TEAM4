@@ -1,4 +1,5 @@
 import ProductPanelSmall from "@/_components/ProductPanelSmall";
+import ProfileInputs from "./settings/_components/ProfileInputs";
 import { NavBar } from "@/custom-components/NavBar";
 
 export default function Home() {
@@ -10,13 +11,16 @@ export default function Home() {
       " https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D",
   };
   return (
-    <div className="w-[150px] h-[300px]">
-      <ProductPanelSmall
-        price={products.price}
-        date={products.date}
-        description={products.description}
-        imgUrl={products.imgUrl}
-      />
+    <div className="relative">
+      <NavBar />
+      <div className="w-[150px] h-[300px]">
+        <ProductPanelSmall
+          price={products.price}
+          date={products.date}
+          description={products.description}
+          imgUrl={products.imgUrl}
+        />
+      </div>
     </div>
   );
 }
