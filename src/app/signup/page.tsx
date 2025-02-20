@@ -1,4 +1,3 @@
-"use client";
 export default function Home() {
   return (
     <div className="flex justify-center items-center h-screen">
@@ -11,7 +10,7 @@ export default function Home() {
             <div className="text-[rgb(136,138,153)]">Эмайл</div>
             <input
               placeholder=""
-              className="w-[390px] border-[1px] p-[10px] border-zinc-300 rounded-[8px]"
+              className="w-[390px] border-[1px] p-[10px] border-zinc-300 rounded-[8px] focus:ring-2 focus:ring-[#ff3467]"
             />
           </div>
           <div className="mb-5">
