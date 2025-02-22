@@ -99,7 +99,7 @@ export default function Login() {
         <CardHeader>
           <CardTitle>Нэвтрэх</CardTitle>
         </CardHeader>
-        <CardContent className="w-full flex items-center flex-col">
+        <CardContent className="w-full flex items-center flex-col h-[200px] gap-9">
           <div>
             <p className="text-xs text-slate-600">Утасны дугаар</p>
             <Input
