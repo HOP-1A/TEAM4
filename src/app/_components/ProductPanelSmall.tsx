@@ -9,12 +9,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Heart } from "lucide-react";
 import { useState } from "react";
 
-export default function ProductPanelSmall({
+export const  ProductPanelSmall = ({
   price,
   date,
   description,
   imgUrl,
-}: ProductPanelSmallProps) {
+}: ProductPanelSmallProps) => {
   const [isHearted, setIsHearted] = useState<boolean>(false);
   return (
     <Card className="duration-200 ease-in hover:shadow-md hover:shadow-neutral-300 w-fill overflow-hidden">
