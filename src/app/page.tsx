@@ -1,5 +1,6 @@
 import ProductPanelSmall from "@/_components/ProductPanelSmall";
 import { NavBar } from "@/custom-components/NavBar";
+import Login from "./login/login";
 
 export default function Home() {
   const products = {
@@ -19,6 +20,7 @@ export default function Home() {
           description={products.description}
           imgUrl={products.imgUrl}
         />
+        <Login></Login>
       </div>
     </div>
   );
