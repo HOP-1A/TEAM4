@@ -1,10 +1,10 @@
 "use client";
 import { Card, CardContent } from "@/components/ui/card";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const ProductPageInfo = () => {
   const [hasDelivery, setHasDelivery] = useState<boolean>(false);
-  const [isNew, setIsNew] = useState<boolean>(false);
+  const [isNew, setIsNew] = useState<boolean>();
   const [image, setImage] = useState("");
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const Product = {
@@ -15,6 +15,7 @@ export const ProductPageInfo = () => {
     ],
     condition: "Шинэ",
     hasDelivery: true,
+    createdAt: "2025-2-22",
     description:
       "Гүйдэг хаалгатай шкаф зарна Өнгө: Цагаан Угсрахад бэлэн иж бүрдэлээрээ таньд очих болно. Хүргэлт үнэгүй Орон нутгийн унаанд тавьж өгнө. Доторхи бүтэц нь зургаар орсон тул зургаа гүйлгэж үзээрэй ",
   };
@@ -23,7 +24,20 @@ export const ProductPageInfo = () => {
     setSelectedImage(index);
     setImage(imageUrl);
   };
-
+  const checkDate = () => {
+    const createdAtDate = new Date(Product.createdAt);
+    const currentDate = new Date();
+    const differenceTime = currentDate.getTime() - createdAtDate.getTime();
+    const differenceDays = differenceTime / (1000 * 3600 * 24);
+    if (differenceDays <= 3) {
+      setIsNew(true);
+    } else {
+      setIsNew(false);
+    }
+  };
+  useEffect(() => {
+    checkDate();
+  }, []);
   return (
     <div className="w-2/4 pl-16 flex flex-col gap-8 items-center">
       {image ? (
