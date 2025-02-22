@@ -1,5 +1,6 @@
 import ProductPanelSmall from "@/_components/ProductPanelSmall";
 import { NavBar } from "@/custom-components/NavBar";
+import CategoryList from "@/_components/CategoryList";
 
 export default function Home() {
   const products = {
@@ -20,6 +21,7 @@ export default function Home() {
           imgUrl={products.imgUrl}
         />
       </div>
+      <CategoryList />
     </div>
   );
 }
