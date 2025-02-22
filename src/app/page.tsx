@@ -17,7 +17,6 @@ export default function Home() {
         description={products.description}
         imgUrl={products.imgUrl}
       />
-      <ProfileInputs />
     </div>
   );
 }

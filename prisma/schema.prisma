@@ -17,8 +17,8 @@ model Users {
   id          String     @id @default(uuid())
   firstname   String
   lastname    String
-  phoneNumber Int
-  email       String     @unique
+  phoneNumber BigInt     @unique
+  email       String
   password    String
   updatedAt   DateTime   @updatedAt
   createdAt   DateTime   @default(now())
@@ -26,15 +26,19 @@ model Users {
 }
 
 model Products {
-  id        String    @id @default(uuid())
-  price     Int
-  quantity  Int
-  name      String
-  user      Users     @relation(fields: [usersId], references: [id])
-  updatedAt DateTime  @updatedAt
-  createdAt DateTime  @default(now())
-  usersId   String
-  Category  Category?
+  id          String    @id @default(uuid())
+  price       Int
+  quantity    Int
+  name        String
+  description String
+  imgUrls     String[]
+  hasDelivery Boolean
+  isNew       Boolean
+  user        Users     @relation(fields: [usersId], references: [id])
+  updatedAt   DateTime  @updatedAt
+  createdAt   DateTime  @default(now())
+  usersId     String
+  Category    Category?
 }
 
 model Category {
