@@ -1,5 +1,6 @@
 import ProductPanelSmall from "@/_components/ProductPanelSmall";
 import { NavBar } from "@/custom-components/NavBar";
+import HPCategoryIcon from "@/_components/HomePage-CategoryIcon";
 
 export default function Home() {
   const products = {
@@ -19,6 +20,9 @@ export default function Home() {
           description={products.description}
           imgUrl={products.imgUrl}
         />
+      </div>
+      <div>
+        <HPCategoryIcon />
       </div>
     </div>
   );
