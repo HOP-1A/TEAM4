@@ -1,20 +1,29 @@
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
 export const POST = async (req: Request) => {
   try {
     const body = await req.json();
+    const { firstname, lastname, email, phoneNumber, password } = body;
+    const hashedPassword = bcrypt.hashSync(password, 5);
     const user = await prisma.users.create({
       data: {
-        firstname: body.firstname,
-        lastname: body.lastname,
-        email: body.email,
-        phoneNumber: body.phoneNumber,
-        password: body.password,
+        firstname,
+        lastname,
+        email,
+        phoneNumber,
+        password: hashedPassword,
       },
     });
-    console.log(user);
-    return NextResponse.json(user);
+    if (!process.env.JWT_SECRET) {
+      throw new Error("JWT_SECRET is not defined");
+    }
+    const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, {
+      expiresIn: "3d",
+    });
+    return NextResponse.json(token);
   } catch (error) {
     return NextResponse.json(
       { error: "Failed to create user" },
@@ -22,23 +31,3 @@ export const POST = async (req: Request) => {
     );
   }
 };
-// export const PUT = async (req: Request) => {
-//   try {
-//     const body = await req.json();
-//     const user = await prisma.users.update({
-//       where: {
-//         email: body.email,
-//       },
-//       data: {
-//         username: body.username,
-//       },
-//     });
-//     console.log(user);
-//     return NextResponse.json(user);
-//   } catch (error) {
-//     return NextResponse.json(
-//       { error: "Failed to update user" },
-//       { status: 500 }
-//     );
-//   }
-// };
