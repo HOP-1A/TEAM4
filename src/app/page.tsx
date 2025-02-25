@@ -5,7 +5,6 @@ export default function Home() {
     <div className="relative">
       <NavBar />
       <Footer/>
-      
     </div>
   );
 }
