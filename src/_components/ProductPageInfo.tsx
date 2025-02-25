@@ -13,7 +13,6 @@ export const ProductPageInfo = () => {
       "https://cdnp.cody.mn/spree/images/2856018/large/12.jpg?1739978215",
       "https://cdnp.cody.mn/spree/images/2856019/large/25.jpg?1739978216",
     ],
-    condition: "Шинэ",
     hasDelivery: true,
     createdAt: "2025-2-22",
     description:
